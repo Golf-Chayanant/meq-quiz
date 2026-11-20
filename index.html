@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#FBF7F0">
+  <title>คุณเป็นนกแบบไหน? แบบทดสอบ MEQ | Whoop Lab by Golf</title>
+  <meta name="description" content="แบบทดสอบ MEQ 19 ข้อ ฉบับภาษาไทย รู้ทันทีว่าคุณเป็นนกตื่นเช้า นกกลางวัน หรือนกฮูก และช่วงเวลาทองของคุณอยู่ตอนไหน">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="คนทุกคน ไม่ได้เหมาะกับการตื่นเช้า — คุณเป็นนกแบบไหน?">
+  <meta property="og:description" content="แบบทดสอบ MEQ 19 ข้อ ฉบับภาษาไทย รู้ผลทันที | Whoop Lab by Golf">
+  <meta property="og:image" content="https://golf-chayanant.github.io/meq-quiz/og/default.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+
+    <!-- หน้าแรก -->
+    <section id="intro" class="screen active">
+      <p class="brand">Whoop Lab by Golf</p>
+      <h1>คนทุกคน <span class="strike">ไม่ได้เหมาะ</span><br>กับการตื่นเช้า</h1>
+      <p class="lead">ทำแบบทดสอบ 19 ข้อ รู้ทันทีว่าคุณเป็นนกแบบไหน และช่วงเวลาทองของคุณอยู่ตอนไหนของวัน</p>
+
+      <div class="birds">
+        <div class="bird lark"><span class="ico" data-icon="lark"></span><b>นกตื่นเช้า</b><small>Morning Lark</small></div>
+        <div class="bird middle"><span class="ico" data-icon="middle"></span><b>นกกลางวัน</b><small>Hummingbird</small></div>
+        <div class="bird owl"><span class="ico" data-icon="owl"></span><b>นกฮูก</b><small>Night Owl</small></div>
+      </div>
+
+      <button id="start" class="btn primary big">เริ่มทำแบบทดสอบ</button>
+      <p class="trust">ไม่ต้องกรอกชื่อ ไม่บังคับอีเมล · บันทึกคำตอบแบบไม่ระบุตัวตน</p>
+
+      <p class="credit">แบบทดสอบ Morningness-Eveningness Questionnaire (MEQ) ของ Horne &amp; Östberg (1976)<br>แปลและเรียบเรียงเป็นภาษาไทยโดย กอล์ฟ — Whoop Lab by Golf</p>
+    </section>
+
+    <!-- คำถาม -->
+    <section id="quiz" class="screen">
+      <div class="topbar">
+        <button id="back" class="icon-btn" aria-label="ย้อนกลับ">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="progress"><div id="bar"></div></div>
+        <span id="count" class="count">1/19</span>
+      </div>
+      <div id="qwrap" class="qwrap">
+        <p id="qnum" class="qnum">ข้อ 1</p>
+        <h2 id="qtext"></h2>
+        <div id="options" class="options" role="radiogroup"></div>
+      </div>
+    </section>
+
+    <!-- ผลลัพธ์ -->
+    <section id="result" class="screen">
+      <article id="card" class="card">
+        <div class="card-head">
+          <span class="ico big" id="r-icon"></span>
+          <p class="r-group" id="r-group"></p>
+          <h2 id="r-name"></h2>
+          <p class="r-en" id="r-en"></p>
+          <p class="r-score" id="r-score"></p>
+        </div>
+        <p class="r-tagline" id="r-tagline"></p>
+        <div class="chips">
+          <div><small>เวลาตื่นที่ใช่</small><b id="r-wake"></b></div>
+          <div><small>เวลานอนที่ใช่</small><b id="r-bed"></b></div>
+        </div>
+        <div class="golden">
+          <small>ช่วงเวลาทองของคุณ</small>
+          <b id="r-golden"></b>
+          <span>เก็บงานที่ยากที่สุดของวันไว้ช่วงนี้</span>
+        </div>
+      </article>
+
+      <div class="actions">
+        <button id="save" class="btn primary">บันทึกรูปผลลัพธ์</button>
+        <button id="share" class="btn">แชร์ให้เพื่อนลองทำ</button>
+        <a id="comment" class="btn ghost" target="_blank" rel="noopener" hidden>แคปไปบอกกอล์ฟใต้โพสต์ ว่าได้ Type ไหน</a>
+      </div>
+
+      <section class="block">
+        <h3>วันที่ใช่ของคุณ</h3>
+        <ol id="r-day" class="day"></ol>
+      </section>
+
+      <section class="block">
+        <h3>3 กฎของคุณ</h3>
+        <ol id="r-rules" class="rules"></ol>
+      </section>
+
+      <section id="mail" class="block mail" hidden>
+        <h3>ส่งผลเก็บไว้ในอีเมล</h3>
+        <p>ได้ผลลัพธ์พร้อมตารางวันของ Type คุณไว้เปิดดูทีหลัง</p>
+        <form id="mailform" novalidate>
+          <input id="email" type="email" inputmode="email" autocomplete="email" placeholder="อีเมลของคุณ" required>
+          <label class="consent"><input id="consent" type="checkbox"> ยินดีรับเรื่องการนอนและสุขภาพจาก Whoop Lab by Golf ทางอีเมลเป็นครั้งคราว (ไม่ติ๊กก็ได้รับผลตามปกติ)</label>
+          <button class="btn primary" type="submit">ส่งผลเข้าอีเมล</button>
+          <p id="mailmsg" class="mailmsg" role="status"></p>
+        </form>
+        <p class="fine">อีเมลนี้ใช้ส่งผลลัพธ์ให้คุณ และส่งข่าวสารเฉพาะเมื่อคุณติ๊กยินยอม ขอลบข้อมูลได้ทุกเมื่อโดยตอบกลับอีเมล</p>
+      </section>
+
+      <button id="retake" class="btn ghost">ทำแบบทดสอบใหม่</button>
+      <p class="credit">ผลนี้เป็นแนวทางทำความรู้จักตัวเอง ไม่ใช่การวินิจฉัยทางการแพทย์<br>MEQ: Horne &amp; Östberg (1976) · แปลไทยโดย Whoop Lab by Golf</p>
+    </section>
+
+    <!-- รูปสำหรับกดค้างบันทึก (สำรอง กรณีเครื่องดาวน์โหลดไม่ได้) -->
+    <div id="sheet" class="sheet" hidden>
+      <div class="sheet-inner">
+        <p>กดค้างที่รูป แล้วเลือก "บันทึกรูปภาพ"</p>
+        <img id="sheetimg" alt="ผลลัพธ์แบบทดสอบ MEQ">
+        <a id="dl" class="btn" download="meq-result.png">ดาวน์โหลด</a>
+        <button id="sheetclose" class="btn ghost">ปิด</button>
+      </div>
+    </div>
+    <div id="toast" class="toast" role="status"></div>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
