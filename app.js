@@ -266,7 +266,7 @@
     ctx.fillText("คุณเป็นนกแบบไหน? ลองทำแบบทดสอบ MEQ", W / 2, 1270);
     ctx.fillStyle = "rgba(255,255,255,.85)";
     ctx.font = "500 32px " + F;
-    ctx.fillText("Whoop Lab by Golf", W / 2, 1318);
+    ctx.fillText("กอล์ฟนอน 100", W / 2, 1318);
     return c;
   }
 

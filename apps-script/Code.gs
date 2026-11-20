@@ -1,5 +1,5 @@
 /**
- * ตัวรับข้อมูลเบื้องหลังของเว็บแบบทดสอบ MEQ (Whoop Lab by Golf)
+ * ตัวรับข้อมูลเบื้องหลังของเว็บแบบทดสอบ MEQ (กอล์ฟนอน 100)
  * - ติดตั้งใน Google Sheet เดิม: Extensions > Apps Script > วางไฟล์นี้
  * - รัน setup() 1 ครั้ง แล้ว Deploy > New deployment > Web app
  *   (Execute as: Me / Who has access: Anyone) → เอา URL /exec ไปใส่ใน config.js
@@ -12,7 +12,7 @@
 var RESULT_SHEET = "WebResults";
 var EMAIL_SHEET = "WebEmails";
 var QUOTA_RESERVE = 5; // เหลือโควต้าไว้เผื่อใช้เอง
-var PAGE_NAME = "Whoop Lab by Golf";
+var PAGE_NAME = "กอล์ฟนอน 100";
 var SITE_URL = "https://golf-chayanant.github.io/meq-quiz/";
 
 /* TYPES: สร้างจาก content.js — ถ้าแก้เนื้อหาใน content.js ให้แก้ตรงนี้ให้ตรงกัน */
